@@ -8,6 +8,10 @@ app.get("/users/cadastrar", (req, res) => {
     res.sendFile(`${caminho}/usuariosform.html`);
 });
 
+app.post("/users/save", (req, res) => {
+    console.log(req.body);
+});
+
 app.get("/users/:id", (req, res) => {
     const id = req.params.id;
 
