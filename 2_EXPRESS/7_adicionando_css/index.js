@@ -1,16 +1,37 @@
 const express = require("express");
+const { parse } = require("path");
 const app = express();
 
 const path = require("path");
 const caminho = path.join(__dirname, "templates");
 
+// Acessar as informações do corpo da requisição
+app.use(express.urlencoded({
+    extended: true
+}));
+
+// Transforma as informações em objetos JS
+app.use(express.json());
+
+// Utilizar arquivos estáticos
+app.use(express.static("public"));
+
+app.post("/users/save", (req, res) => {
+    const nome = req.body.nome;
+    const idade = req.body.idade;
+
+    console.log(`
+        Usuário: ${nome}
+        Idade: ${idade}
+    `);
+
+    res.redirect('/');
+});
+
 app.get("/users/cadastrar", (req, res) => {
     res.sendFile(`${caminho}/usuariosform.html`);
 });
 
-app.post("/users/save", (req, res) => {
-    console.log(req.body);
-});
 
 app.get("/users/:id", (req, res) => {
     const id = req.params.id;
