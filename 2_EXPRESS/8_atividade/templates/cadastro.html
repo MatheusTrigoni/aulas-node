@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+<body>
+    <header>
+        <h1>Você está na tela de Cadastro</h1>
+    </header>
+
+    <section>
+        <form method="POST" action="/cadastro/salvar">
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Digite o email">
+            </div>
+
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" placeholder="Digite a senha">
+            </div>
+            
+            <button type="submit" class="botao">Cadastrar</button>
+        </form>
+
+        <button type="button" class="botao voltar">
+            <a href="/">Voltar</a>
+        </button>
+    </section>
+</body>
+</html>
