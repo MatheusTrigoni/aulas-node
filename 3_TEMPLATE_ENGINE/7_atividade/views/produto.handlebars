@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#with pd}}
+        <title>{{nome}}</title>
+    {{/with}}
+</head>
+<body>
+    {{#with pd}}
+        <h2>{{nome}}</h2>
+        <p>R$ {{preco}}</p>
+        <p>{{descricao}}</p>
+    {{/with}}
+
+    <a href="/">Voltar</a>
+</body>
+</html>
